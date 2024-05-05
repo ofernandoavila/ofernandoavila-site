@@ -1,0 +1,14 @@
+.card {
+    padding: 20px;
+    background-color: $background-secundary;
+    border: 1px solid $border-secundary;
+    border-radius: 10px;
+
+    &-body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+}

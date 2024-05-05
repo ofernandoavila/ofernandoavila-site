@@ -1,0 +1,17 @@
+body {
+    background-color: $background-primary;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    transition: .3s ease-in-out;
+}
