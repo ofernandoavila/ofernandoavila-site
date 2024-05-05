@@ -13,10 +13,10 @@ export default function UserCard() {
                     <h6>Desenvolvedor Full-Stack</h6>
                 </div>
                 <ul className="user-social">
-                    <li><a href="" target="_blank"><i className="fa fa-envelope"></i></a></li>
-                    <li><a href="" target="_blank"><i className="fa-brands fa-instagram"></i></a></li>
-                    <li><a href="" target="_blank"><i className="fa-brands fa-youtube"></i></a></li>
-                    <li><a href="" target="_blank"><i className="fa-brands fa-github"></i></a></li>
+                    <li><a href="mailto:avila@ofernandoavila.com" target="_blank" rel="noreferrer"><i className="fa fa-envelope"></i></a></li>
+                    <li><a href="https://instagram.com/ofernandoavila" target="_blank" rel="noreferrer"><i className="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://www.youtube.com/@ofernandoavila" target="_blank" rel="noreferrer"><i className="fa-brands fa-youtube"></i></a></li>
+                    <li><a href="https://www.github.com/ofernandoavila" target="_blank" rel="noreferrer"><i className="fa-brands fa-github"></i></a></li>
                 </ul>
             </div>
         </Card>

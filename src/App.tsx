@@ -1,5 +1,3 @@
-import React from 'react';
-import Card from './components/basic-ui/Card';
 import UserCard from './components/users/UserCard';
 function App() {
   return (
