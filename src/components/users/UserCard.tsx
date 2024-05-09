@@ -11,6 +11,7 @@ export default function UserCard() {
                 <div className="user-info">
                     <h4>Fernando Ávila</h4>
                     <h6>Full Stack Developer</h6>
+                    <span className="location"><i className="fa-solid fa-location-dot"></i>Rio de Janeiro, Brasil</span>
                 </div>
                 <ul className="user-social">
                     <li><a href="https://instagram.com/ofernandoavila" target="_blank" rel="noreferrer"><i className="fa-brands fa-instagram"></i></a></li>
