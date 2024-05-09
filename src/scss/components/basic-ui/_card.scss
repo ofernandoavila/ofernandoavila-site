@@ -3,6 +3,7 @@
     background-color: $background-secundary;
     border: 1px solid $border-secundary;
     border-radius: 10px;
+    box-shadow: 0px 0px 50px $background-card-shadow-primary;
 
     &-body {
         display: flex;
