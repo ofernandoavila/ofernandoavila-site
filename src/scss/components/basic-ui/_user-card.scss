@@ -28,6 +28,14 @@
         flex-direction: column;
         justify-content: center;
         text-align: center;
+
+        .location {
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
     }
 
     .user-social {
