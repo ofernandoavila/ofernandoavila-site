@@ -3,7 +3,11 @@
     flex-direction: column;
     justify-content: center;
     gap: 30px;
-    color: $text-light;
+    color: $text-light-primary;
+
+    h6 {
+        color: $text-light-secondary;
+    }
 
     .profile-image {
         width: 128px;
@@ -29,8 +33,15 @@
     .user-social {
         width: 100%;
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
     
+        li {
+            flex-grow: 1;
+            min-width: 25%;
+            text-align: center;
+        }
+
         i {
             font-size: 28px;
         }

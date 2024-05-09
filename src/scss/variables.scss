@@ -2,7 +2,7 @@ $font-family: "Montserrat", sans-serif;
 
 // Background
 $background-primary: #0D0D0D;
-$background-secundary: #595959;
+$background-secundary: #2e2e2e;
 
 // Border
 
@@ -10,10 +10,12 @@ $border-primary: #595959;
 $border-secundary: #0D0D0D;
 
 // Text
-$text-light: #F2F2F2;
+$text-light-primary: #F2F2F2;
+$text-light-secondary: #979797;
 $text-dark: #595959;
 $text-darker: #0D0D0D;
 
 // Colors
-$primary-color: #BAF266;
-$secundary-color: #DAF280;
+$primary-color: #1e90ff;
+$primary-color-hover: #0057ad;
+$secundary-color: #11569b;
