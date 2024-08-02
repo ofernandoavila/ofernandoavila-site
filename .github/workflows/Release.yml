@@ -1,0 +1,63 @@
+name: Release
+
+on:
+    push:
+        branches: [develop]
+
+    workflow_dispatch:
+
+jobs:
+    Build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v2
+              with:
+                  node-version: "21"
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Build
+              run: npm run build
+
+            - name: Preparando artefato
+              run: |
+                mkdir -p artifact
+                cp -r ./build/* ./artifact/
+                
+            - name: Adicionando htaccess ao bundle
+              run: |
+                cp .htaccess ./artifact/.htaccess
+
+            - name: Salvando artefato
+              uses: actions/upload-artifact@v4
+              with:
+                name: ofernandoavila-landing_page
+                path: artifact
+
+    Staging:
+        runs-on: ubuntu-latest
+        environment:
+            name: HML
+            url: ${{ vars.BASE_URL }}
+        needs: Build
+        steps:
+            - name: Download artifact
+              uses: actions/download-artifact@v4
+              with:
+                name: audittei-front
+                path: ./artifact
+            - name: Deploy
+              uses: easingthemes/ssh-deploy@main
+              with:
+                SSH_PRIVATE_KEY: ${{ secrets.REMOTE_SSH_KEY }}
+                ARGS: "-rlgoDzvc --delete --exclude={'.htaccess'}"
+                REMOTE_HOST: ${{ vars.REMOTE_HOST }}
+                REMOTE_USER: ${{ vars.REMOTE_USER }}
+                SOURCE: "artifact/"
+                TARGET: ${{ vars.REMOTE_TARGET }}
