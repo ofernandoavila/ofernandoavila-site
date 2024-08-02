@@ -1,9 +1,9 @@
 html.light {
     // Background
-    --background-primary: #fff;
-    --background-secundary: #f5f5f5;
+    --background-primary: #ffffff;
+    --background-secundary: #ffffff;
 
-    --background-card-shadow-primary: #303030;
+    --background-card-shadow-primary: #8a8a8a;
 
     // Border
     --border-primary: #ccc;
@@ -16,5 +16,7 @@ html.light {
     // Colors
     --primary-color: #1e90ff;
     --primary-color-hover: #0057ad;
-    --secundary-color: #11569b;
+    
+    --secondary-color: #dddddd;
+    --secondary-color-hover: #cccccc;
 }

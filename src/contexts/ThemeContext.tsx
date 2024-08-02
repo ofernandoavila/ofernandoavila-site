@@ -23,7 +23,14 @@ export default function ThemeContextProvider({ children }: ThemeContextProps) {
 
     const ToggleThemeButton = () => (
         <div style={{ position: 'absolute', top: 16, right: 16 }} >
-            <button onClick={ toggleTheme } className="btn btn-secondary">{ theme === 'light' ? <i className="fa fa-moon"></i> : <i className="fa fa-sun"></i> }</button>
+            <div className="form-group">
+                <span className="toggle-switch">
+                    <input id="switch-rounded" type="checkbox" checked={ theme !== 'light' } onChange={ toggleTheme }/>
+                    <label htmlFor="switch-rounded">
+                        <i className={` fa ${ theme === 'light' ? 'fa-moon' : 'fa-sun' } `}></i>
+                    </label>
+                </span>
+            </div>
         </div>
     );
     
