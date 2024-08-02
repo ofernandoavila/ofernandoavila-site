@@ -14,11 +14,24 @@ interface ThemeContextData {
 export const ThemeContext = createContext({} as ThemeContextData);
 
 export default function ThemeContextProvider({ children }: ThemeContextProps) {
+
+    const THEME_STORAGE_KEY = 'com.ofernandoavila.theme_saved';
     
     const [theme, setTheme] = useState<string>('dark');
     
     const toggleTheme = () => {
-        return setTheme(theme === 'light' ? 'dark' : 'light');
+        return __setTheme(theme === 'light' ? 'dark' : 'light');
+    }
+
+    const __getTheme = async () : Promise<string> => {
+        let themeSaved = await localStorage.getItem(THEME_STORAGE_KEY);
+
+        return themeSaved ?? 'dark';
+    }
+    
+    const __setTheme = async (value: string) : Promise<void> => {
+        setTheme(value);
+        return await localStorage.setItem(THEME_STORAGE_KEY, value);
     }
 
     const ToggleThemeButton = () => (
@@ -33,6 +46,10 @@ export default function ThemeContextProvider({ children }: ThemeContextProps) {
             </div>
         </div>
     );
+
+    useEffect(() => {
+        __getTheme().then( value => setTheme(value) );
+    }, []);
     
     useEffect(() => {
         document.querySelector('html')!.classList.remove(theme === 'light' ? 'dark' : 'light');
