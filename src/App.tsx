@@ -1,13 +1,17 @@
-import Signature from './components/basic-ui/Signature';
-import UserCard from './components/users/UserCard';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import ThemeContextProvider from "./contexts/ThemeContext";
 
 function App() {
-  return (
-    <div style={{ width: '100%', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '20px' }}>
-      <UserCard/>
-      <Signature />
-    </div>
-  );
+	return (
+		<ThemeContextProvider>
+			<BrowserRouter>
+				<Routes>
+					<Route path="/" element={<Home />} />
+				</Routes>
+			</BrowserRouter>
+		</ThemeContextProvider>
+	);
 }
 
 export default App;

@@ -13,7 +13,7 @@ export default function UserCard() {
                     <h6>Full Stack Developer</h6>
                     <section>
                         <span className="location"><i className="fa-solid fa-location-dot"></i>Rio de Janeiro, Brasil</span>
-                        <span className="workplace"><i className="fa-solid fa-suitcase"></i>CCAA LTDA.</span>
+                        <span className="workplace"><i className="fa-solid fa-suitcase"></i>CCAA | WALDYR LIMA EDITAR LTDA.</span>
                     </section>
                 </div>
                 <ul className="user-social">

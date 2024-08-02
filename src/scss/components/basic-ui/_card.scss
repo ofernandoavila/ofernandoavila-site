@@ -1,9 +1,9 @@
 .card {
     padding: 20px;
-    background-color: $background-secundary;
-    border: 1px solid $border-secundary;
+    background-color: var(--background-secundary);
+    border: 1px solid var(--border-secundary);
     border-radius: 10px;
-    box-shadow: 0px 0px 50px $background-card-shadow-primary;
+    box-shadow: 0px 0px 50px var(--background-card-shadow-primary);
 
     &-body {
         display: flex;
