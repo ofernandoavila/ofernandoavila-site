@@ -1,5 +1,10 @@
 @import './themes/light';
 @import './themes/dark';
+@import './themes/landing-light';
+@import './themes/landing-dark';
+
+@import '../components/QuickSearch/style/quick-search';
+@import '../components/modal/style/modal';
 
 @import 'reset.scss';
 
@@ -8,3 +13,15 @@
 @import 'components/basic-ui/user-card';
 @import 'components/basic-ui/signature';
 @import 'components/form/toggle-switch';
+
+#landing-page {
+    @import '../components/landing-page/header/style/header';
+
+    p, span, a {
+        font-family: var(--font-family-primary);
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-family-secundary);
+    }
+}

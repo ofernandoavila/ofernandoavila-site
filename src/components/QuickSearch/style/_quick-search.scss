@@ -1,0 +1,39 @@
+.quick-search-field {
+    display: flex;
+    align-items: center;
+    transition: ease-in-out .3s;
+    
+    i {
+        margin-right: 16px;
+        transition: ease-in-out .3s;
+        color: var(--primary-color);
+    }
+
+    span {
+        color: var(--text-primary);
+        font-weight: 500;
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        i {
+            color: var(--primary-color-hover);
+        }
+    }
+}
+
+.quick-search-modal {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    
+    span {
+        color: #fff;
+        font-weight: 600;
+        font-size: 32px;
+        text-align: center;
+    }
+}

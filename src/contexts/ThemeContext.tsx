@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
+import ModalContextProvider from "../components/modal/context/ModalContext";
 
 interface ThemeContextProps {
     children: ReactNode;
@@ -6,6 +7,7 @@ interface ThemeContextProps {
 
 interface ThemeContextData {
     theme: string;
+    setThemeController: (name: string) => void;
     setTheme: React.Dispatch<React.SetStateAction<string>>;
     toggleTheme: () => void;
     ToggleThemeButton: () => JSX.Element;
@@ -18,9 +20,14 @@ export default function ThemeContextProvider({ children }: ThemeContextProps) {
     const THEME_STORAGE_KEY = 'com.ofernandoavila.theme_saved';
     
     const [theme, setTheme] = useState<string>('dark');
+    const [themeController, setThemecontroller] = useState<string>('');
     
     const toggleTheme = () => {
         return __setTheme(theme === 'light' ? 'dark' : 'light');
+    }
+
+    const setThemeController = (name: string) => {
+        setThemecontroller(name);
     }
 
     const __getTheme = async () : Promise<string> => {
@@ -52,13 +59,33 @@ export default function ThemeContextProvider({ children }: ThemeContextProps) {
     }, []);
     
     useEffect(() => {
-        document.querySelector('html')!.classList.remove(theme === 'light' ? 'dark' : 'light');
-        document.querySelector('html')!.classList.add(theme);
-    }, [ theme ]);
+        let adicionar = '';
+        let remover = '';
+
+        if(themeController !== '') {
+            if(theme === 'light') {
+                document.querySelector('html')!.classList.remove(themeController + '-dark');
+                document.querySelector('html')!.classList.add(themeController + '-light');
+            } else {
+                document.querySelector('html')!.classList.remove(themeController + '-light');
+                document.querySelector('html')!.classList.add(themeController + '-dark');
+            }
+        } else {
+            if(theme === 'light') {
+                document.querySelector('html')!.classList.remove('dark');
+                document.querySelector('html')!.classList.add('light');
+            } else {
+                document.querySelector('html')!.classList.remove('light');
+                document.querySelector('html')!.classList.add('dark');
+            }
+        }
+    }, [ theme, themeController ]);
 
     return (
-        <ThemeContext.Provider value={{ theme, setTheme, toggleTheme, ToggleThemeButton }}>
-            { children } 
+        <ThemeContext.Provider value={{ setThemeController, theme, setTheme, toggleTheme, ToggleThemeButton }}>
+            <ModalContextProvider>
+                { children }
+            </ModalContextProvider>
         </ThemeContext.Provider>
     );
 }
