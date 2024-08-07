@@ -1,16 +1,14 @@
-import useTheme from "../hooks/useTheme";
-import Signature from "../components/basic-ui/Signature";
-import UserCard from "../components/users/UserCard";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Home() {
 
-    const { ToggleThemeButton } = useTheme();
+    const navigate = useNavigate();
 
-    return (
-        <div style={{ width: '100%', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '20px' }}>
-            <UserCard />
-            <Signature />
-            <ToggleThemeButton />
-        </div>
-    );
+    useEffect(() => redirecionarParaLinks, []);
+
+    const redirecionarParaLinks = () => navigate('/links');
+
+    return <></>;
+
 }

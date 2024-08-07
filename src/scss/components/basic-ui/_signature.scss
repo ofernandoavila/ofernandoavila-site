@@ -3,3 +3,10 @@
     position: absolute;
     bottom: 60px;
 }
+
+@media screen and (max-width: 768px) {
+    .site-signature {
+        bottom: 8px;
+        font-size: 12px;
+    }
+}

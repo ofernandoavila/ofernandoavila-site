@@ -3,7 +3,7 @@
     height: 160px;
     position: absolute;
     left: 50%;
-    transform: translate(-50%, -140%);
+    transform: translate(-50%, -215%);
     margin: 0 auto;
 
     img {
@@ -52,14 +52,26 @@
     .user-social {
         width: 100%;
         display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        row-gap: 15px;
+        gap: 32px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
     
         li {
-            flex-grow: 1;
-            min-width: 25%;
-            text-align: center;
+
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+
+            }
+
+            span {
+                margin-left: 10px;
+                // text-decoration: underline;
+            }
         }
 
         i {
@@ -69,5 +81,42 @@
         a:hover {
             color: var(--primary-color);
         }
+    }
+
+    .user-info {
+        section {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .profile-image {
+        width: 128px;
+        height: 128px;
+        position: relative;
+        left: 0;
+        transform: none;
+    }
+
+    .user-social {
+        gap: 16px !important;
+
+        i {
+            font-size: 22px !important;
+        }
+
+        a {
+            font-size: 14px;
+        }
+    }
+
+    .user-card {
+        gap: 32px;
+        padding: 0;
+    }
+
+    .card-body {
+        padding: 0;
     }
 }

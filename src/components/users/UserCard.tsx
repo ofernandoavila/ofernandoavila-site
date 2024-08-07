@@ -17,12 +17,12 @@ export default function UserCard() {
                     </section>
                 </div>
                 <ul className="user-social">
-                    <li><a href="https://instagram.com/ofernandoavila" target="_blank" rel="noreferrer"><i className="fa-brands fa-instagram"></i></a></li>
-                    <li><a href="https://www.youtube.com/@ofernandoavila" target="_blank" rel="noreferrer"><i className="fa-brands fa-youtube"></i></a></li>
-                    <li><a href="https://www.github.com/ofernandoavila" target="_blank" rel="noreferrer"><i className="fa-brands fa-github"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/ofernandoavila" target="_blank" rel="noreferrer"><i className="fa-brands fa-linkedin"></i></a></li>
-                    <li><a href="https://www.behance.com/ofernandoavila" target="_blank" rel="noreferrer"><i className="fa-brands fa-behance"></i></a></li>
-                    <li><a href="mailto:avila@ofernandoavila.com" target="_blank" rel="noreferrer"><i className="fa fa-envelope"></i></a></li>
+                    <li><a href="https://instagram.com/ofernandoavila" target="_blank" rel="noreferrer"><i className="fa-brands fa-instagram"></i><span>Instagram | /ofernandoavila</span></a></li>
+                    <li><a href="https://www.youtube.com/@ofernandoavila" target="_blank" rel="noreferrer"><i className="fa-brands fa-youtube"></i><span>Youtube | /@ofernandoavila</span></a></li>
+                    <li><a href="https://www.github.com/ofernandoavila" target="_blank" rel="noreferrer"><i className="fa-brands fa-github"></i><span>Github | /ofernandoavila</span></a></li>
+                    <li><a href="https://www.linkedin.com/in/ofernandoavila" target="_blank" rel="noreferrer"><i className="fa-brands fa-linkedin"></i><span>Linkedin | /in/ofernandoavila</span></a></li>
+                    <li><a href="https://www.behance.com/ofernandoavila" target="_blank" rel="noreferrer"><i className="fa-brands fa-behance"></i><span>Behance | /ofernandoavila</span></a></li>
+                    <li><a href="mailto:avila@ofernandoavila.com" target="_blank" rel="noreferrer"><i className="fa fa-envelope"></i><span>Email | avila@ofernandoavila.com</span></a></li>
                 </ul>
             </div>
         </Card>
