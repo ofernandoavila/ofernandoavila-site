@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import useTheme from "../../../hooks/useTheme";
 import QuickSearch from "../../QuickSearch/QuickSearch";
+import Logo from "../../logo/Logo";
+import MainMenu from "../main-menu/MainMenu";
 
 export default function Header() {
 
@@ -13,11 +15,9 @@ export default function Header() {
     return (
         <header>
             <div className="header-container">
-                <div className="d-flex align-items-center justify-content-between" style={{ gap: 16 }}>
-                    <QuickSearch />
-                    <h2>ofernandoavila</h2>
-                    <button className="btn btn-primary mx-4"><i className="fa fa-bars"></i></button>
-                </div>
+                <QuickSearch />
+                <Logo />
+                <MainMenu/>
             </div>
         </header>
     );

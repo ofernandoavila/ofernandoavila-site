@@ -1,8 +1,14 @@
+
 @import './themes/light';
 @import './themes/dark';
 @import './themes/landing-light';
 @import './themes/landing-dark';
 
+@import './bootstrap-override/bootstrap-override.scss';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+@import '../components/landing-page/main-menu/styles/main-menu';
+@import '../components/logo/style/logo';
 @import '../components/QuickSearch/style/quick-search';
 @import '../components/modal/style/modal';
 
@@ -13,6 +19,15 @@
 @import 'components/basic-ui/user-card';
 @import 'components/basic-ui/signature';
 @import 'components/form/toggle-switch';
+
+
+html, * {
+    transition: .3s ease-in-out;
+}
+
+.inativo {
+    opacity: 0;
+}
 
 #landing-page {
     @import '../components/landing-page/header/style/header';

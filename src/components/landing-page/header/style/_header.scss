@@ -13,4 +13,19 @@ header {
     padding: 16px 32px;
     border: 1px solid var(--border-primary);
     background-color: var(--background-secundary);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo-title {
+        font-family: var(--font-family-secundary);
+        font-weight: 600;
+    }
+
+    button {
+        i {
+            font-size: 22px;
+        }
+    }
 }

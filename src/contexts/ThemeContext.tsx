@@ -65,9 +65,11 @@ export default function ThemeContextProvider({ children }: ThemeContextProps) {
         if(themeController !== '') {
             if(theme === 'light') {
                 document.querySelector('html')!.classList.remove(themeController + '-dark');
+                document.querySelector('html')!.classList.remove('dark');
                 document.querySelector('html')!.classList.add(themeController + '-light');
             } else {
                 document.querySelector('html')!.classList.remove(themeController + '-light');
+                document.querySelector('html')!.classList.remove('light');
                 document.querySelector('html')!.classList.add(themeController + '-dark');
             }
         } else {
