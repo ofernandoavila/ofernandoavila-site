@@ -1,4 +1,11 @@
-export default function PostCard() {
+import { Link } from "react-router-dom";
+import { Post } from "../../models/Post";
+
+interface PostCardProps {
+    post: Post;
+}
+
+export default function PostCard({ post }: PostCardProps) {
     return (
         <div className="post-card">
             <div className="post-meta">
@@ -12,9 +19,8 @@ export default function PostCard() {
                     </span>
                 </div>
             </div>
-            <div className="post-title">Lorem Ipsum Dolor Sit Amet</div>
-            <div className="post-excerpt">
-                <p>In the realm of technology blogging, captivating your audience goes beyond just the written word. Incorporating eye-catching…</p>
+            <div className="post-title"><Link to={`/post/${post.id}`}>{ post.title.rendered }</Link></div>
+            <div className="post-excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}>
             </div>
             <div className="post-signature">
                 <div className="signature-author">
