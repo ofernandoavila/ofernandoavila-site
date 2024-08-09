@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
-import ModalContextProvider from "../components/modal/context/ModalContext";
+import ModalContextProvider from "../../modal/context/ModalContext";
 
 interface ThemeContextProps {
     children: ReactNode;
@@ -11,6 +11,7 @@ interface ThemeContextData {
     setTheme: React.Dispatch<React.SetStateAction<string>>;
     toggleTheme: () => void;
     ToggleThemeButton: () => JSX.Element;
+    isHeaderScrolled: boolean;
 }
 
 export const ThemeContext = createContext({} as ThemeContextData);
@@ -21,6 +22,17 @@ export default function ThemeContextProvider({ children }: ThemeContextProps) {
     
     const [theme, setTheme] = useState<string>('dark');
     const [themeController, setThemecontroller] = useState<string>('');
+
+    const [isHeaderScrolled, setIsHeaderScrolled] = useState(false);
+    const scrollThreshold = 150;
+
+    const __handleScroll = () => {
+        if (window.scrollY > scrollThreshold) {
+            setIsHeaderScrolled(true);
+        } else {
+            setIsHeaderScrolled(false);
+        }
+    }
     
     const toggleTheme = () => {
         return __setTheme(theme === 'light' ? 'dark' : 'light');
@@ -56,6 +68,13 @@ export default function ThemeContextProvider({ children }: ThemeContextProps) {
 
     useEffect(() => {
         __getTheme().then( value => setTheme(value) );
+
+        window.addEventListener('scroll', __handleScroll);
+
+        // Remove o listener de scroll quando o componente é desmontado
+        return () => {
+        window.removeEventListener('scroll', __handleScroll);
+        };
     }, []);
     
     useEffect(() => {
@@ -84,7 +103,7 @@ export default function ThemeContextProvider({ children }: ThemeContextProps) {
     }, [ theme, themeController ]);
 
     return (
-        <ThemeContext.Provider value={{ setThemeController, theme, setTheme, toggleTheme, ToggleThemeButton }}>
+        <ThemeContext.Provider value={{ isHeaderScrolled, setThemeController, theme, setTheme, toggleTheme, ToggleThemeButton }}>
             <ModalContextProvider>
                 { children }
             </ModalContextProvider>

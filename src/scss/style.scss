@@ -1,3 +1,4 @@
+@import 'variables.scss';
 
 @import './themes/light';
 @import './themes/dark';
@@ -7,6 +8,7 @@
 @import './bootstrap-override/bootstrap-override.scss';
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
+@import '../components/post-card/style/post-card';
 @import '../components/landing-page/main-menu/styles/main-menu';
 @import '../components/logo/style/logo';
 @import '../components/QuickSearch/style/quick-search';
@@ -14,14 +16,16 @@
 
 @import 'reset.scss';
 
+@import './pages/home';
+
 @import 'components/basic-ui/background';
 @import 'components/basic-ui/card';
 @import 'components/basic-ui/user-card';
 @import 'components/basic-ui/signature';
-@import 'components/form/toggle-switch';
+@import '../components/theme-manager/styles/toggle-switch';
 
 
-html, * {
+html, body {
     transition: .3s ease-in-out;
 }
 

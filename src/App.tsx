@@ -1,5 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import ThemeContextProvider from "./contexts/ThemeContext";
+import ThemeContextProvider from "./components/theme-manager/contexts/ThemeContext";
 import Links from "./pages/Links";
 import Home from "./pages/Home";
 

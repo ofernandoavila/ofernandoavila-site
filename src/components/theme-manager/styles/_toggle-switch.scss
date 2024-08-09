@@ -50,8 +50,14 @@
             }
         }
 
-        &:hover ~ label {
-            background-color: var(--secondary-color-hover);
+        &:hover {
+            & ~ label {
+                background-color: var(--third-color-hover);
+            }
+        }
+
+        & ~ label > i {
+            color: var(--white-color);
         }
     }
 
@@ -63,7 +69,7 @@
         height: var(--height-switch);
         padding: 8px;
         border-radius: 15px;
-        background-color: var(--secondary-color);
+        background-color: var(--third-color);
         cursor: pointer;
         transition: 0.3s;
 

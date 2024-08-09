@@ -6,14 +6,14 @@ import MainMenu from "../main-menu/MainMenu";
 
 export default function Header() {
 
-    const { setThemeController } = useTheme();
+    const { setThemeController, isHeaderScrolled } = useTheme();
 
     useEffect(() => {
         setThemeController('landing');
     }, []);
 
     return (
-        <header>
+        <header className={`${ isHeaderScrolled ? 'header-fixed' : '' }`}>
             <div className="header-container">
                 <QuickSearch />
                 <Logo />

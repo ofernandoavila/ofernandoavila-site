@@ -1,11 +1,8 @@
 html.landing-light {
-    // Font
-    --font-family-primary: "Urbanist", sans-serif;
-    --font-family-secundary: "DM Sans", sans-serif;
 
     // Background
-    --background-primary: #FAF8FF;
-    --background-secundary: #ffffff;
+    --background-primary: #ffffff;
+    --background-secondary: #FAF8FF;
 
     --background-card-shadow-primary: #8a8a8a;
 
@@ -16,11 +13,4 @@ html.landing-light {
     // Text
     --text-primary: #3a3a3a;
     --text-secondary: #444;
-
-    // Colors
-    --primary-color: #6A4EE9;
-    --primary-color-hover: #4b38a1;
-    
-    --secondary-color: #FF2AAC;
-    --secondary-color-hover: #bb2080;
 }

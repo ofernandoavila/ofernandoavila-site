@@ -1,11 +1,7 @@
-html.landing-dark {
-    // Font
-    --font-family-primary: "Urbanist", sans-serif;
-    --font-family-secundary: "DM Sans", sans-serif;
-    
+html.landing-dark {    
     // Background
     --background-primary: #0D0D0D;
-    --background-secundary: #2e2e2e;
+    --background-secondary: #444444;
 
     --background-card-shadow-primary: #303030;
 
@@ -17,11 +13,4 @@ html.landing-dark {
     // Text
     --text-primary: #fff;
     --text-secondary: #f0f0f0;
-
-    // Colors
-    --primary-color: #6A4EE9;
-    --primary-color-hover: #4b38a1;
-    
-    --secondary-color: #FF2AAC;
-    --secondary-color-hover: #bb2080;
 }

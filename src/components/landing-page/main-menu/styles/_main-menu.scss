@@ -15,6 +15,10 @@
     align-items: center;
     gap: 64px;
 
+    .title-logo {
+        color: var(--dark-color);
+    }
+
     .btn-fechar {
         text-align: right;
         background: var(--primary-color);
